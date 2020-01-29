@@ -1,0 +1,12 @@
+<div class="post-container">
+    <div class="title-form">
+        <h2>Title</h2>
+        <input ng-model="title.value" #title type="text" placeholder="what is the title of your thought">
+    </div>
+
+    <div class="thought-form">
+        <h3>Thought</h3>
+        <input ng-model="thought.value" #thought type="text" placeholder="insert your thought">
+    </div>
+    <button class="add-thought" (click)="addThought(title.value, thought.value)">Add Thought</button>
+</div>

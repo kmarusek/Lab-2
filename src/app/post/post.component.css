@@ -1,0 +1,15 @@
+.content{
+    display: flex;
+}
+.grow{
+    flex-grow: 2;
+}
+.delete{
+    width:10%
+}
+ul{
+    list-style: none;
+}
+.title-text{
+    font-size: 2em;
+}
