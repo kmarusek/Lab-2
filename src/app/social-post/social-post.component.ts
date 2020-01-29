@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 
 @Component({
   selector: 'app-social-post',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./social-post.component.css']
 })
 export class SocialPostComponent implements OnInit {
- 
   constructor() { }
-
+  
   ngOnInit() {
+  }
+  deleteThought(index: number){
+    this.thoughtsList.splice(index, 1)
   }
 
 }

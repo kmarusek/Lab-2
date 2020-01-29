@@ -9,7 +9,7 @@ export interface post{
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  thoughtsList: post[]= []
+ 
 
   
  

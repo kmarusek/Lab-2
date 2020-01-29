@@ -5,7 +5,9 @@
     flex-grow: 2;
 }
 .delete{
-    width:10%
+    width:10%;
+    background-image:url(src\app\post\baseline_delete_black_18dp.png);
+    background-size: 100%;
 }
 ul{
     list-style: none;
