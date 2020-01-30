@@ -1,7 +1,5 @@
 Button {
 	box-shadow: 0px 1px 0px 0px #0d0a01;
-	background:linear-gradient(to bottom, #b3ac98 5%, #8a826d 100%);
-	background-color:#b3ac98;
 	border-radius:15px;
 	border:2px solid #333029;
 	display:inline-block;
@@ -14,17 +12,16 @@ Button {
     text-shadow:0px 1px 0px #e0c9e0;
     width: 100%
 }
-Button:hover {
-	background:linear-gradient(to bottom, #8a826d 5%, #b3ac98 100%);
-	background-color:#8a826d;
-}
+
 Button:active {
 	position:relative;
 	top:1px;
 }
-h1{margin-left: 40%;
+h1{
+	width: 100%;
     font-family: 'Homemade Apple', cursive;
-    color: #03A9F4
+	color: #03A9F4;
+	text-align: center;
 }
 .content{
     border-style: solid;

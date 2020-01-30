@@ -1,37 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Template } from '@angular/compiler/src/render3/r3_ast';
-export interface post{
-  title : string,
-  thought : string,
-}
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { post } from "../social-post/social-post.component"
+
 @Component({
   selector: 'app-post-form',
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.css']
-  
+
 })
 
 export class PostFormComponent implements OnInit {
-  @Input() title: string
-  @Input() thought: string
-  thoughtsList: post[]= [{
-    title: "New thought",
-    thought: "here is my thought",
-  }]
-  addThought(newTitle = "", newThought = "" ) {
-      
-    if (newThought) {
-        this.thoughtsList.push({title: newTitle, thought: newThought});
-      }
-    console.log("this worked", this.thoughtsList)
-  }
- 
-  submitted = false;
+  @Input() title: string;
 
-  onSubmit() { this.submitted = true;
-  console.log("this was submitted")
-console.log(this.submitted) }
+  @Input() thought: string;
+
+  @Input() showModal: boolean;
+
+  @Output() newThought = new EventEmitter<post>();
+
+  idea: string;
+  newTitle: string;
+  submitted: boolean = false;
+
+  addThought() {
+    this.newThought.emit({ title: this.newTitle, thought: this.idea })
+    
+  }
+
   constructor() { }
 
   ngOnInit() {

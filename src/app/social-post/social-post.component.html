@@ -1,17 +1,12 @@
+<h1>My thoughts</h1>
 
-<header>
-    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet">
-</header>
+
 <div class="container">
-    <div class="header">
-        <h1>My thoughts</h1>
-    </div>
     <div class="content-container">
-        <button class="createThought" ng-model="app-post-form">New Thought</button>
-        <div class="content">
-            <app-post  ></app-post>
-        </div>
-        <app-post-form></app-post-form>
+        <button class="createThought" (click)="toggleModal()">New Thought</button>
+    </div>
+    <div id="postList">
+        <app-post *ngFor="let thought of thoughtList"[title] = "thought.title" [thought] = "thought.thought"></app-post>
     </div>
 </div>
-
+<app-post-form *ngIf="showModal" (newThought)="addThought($event)"></app-post-form>

@@ -1,4 +1,9 @@
-import { Component, OnInit,} from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+
+export interface post {
+  title: string,
+  thought: string,
+}
 
 @Component({
   selector: 'app-social-post',
@@ -6,12 +11,22 @@ import { Component, OnInit,} from '@angular/core';
   styleUrls: ['./social-post.component.css']
 })
 export class SocialPostComponent implements OnInit {
-  constructor() { }
   
-  ngOnInit() {
-  }
-  deleteThought(index: number){
-    this.thoughtsList.splice(index, 1)
+  showModal : boolean = false;
+
+  thoughtList: post[] = [];
+  constructor() { }
+
+  
+  addThought($event) {
+    this.thoughtList = [...this.thoughtList, $event]
+    console.log($event)
   }
 
+  toggleModal(){
+    this.showModal=!this.showModal;
+  }
+
+  ngOnInit() {
+  }
 }
